@@ -145,6 +145,10 @@ namespace ImageResizer
                     encoder = new JpegBitmapEncoder{QualityLevel = 100};
                     break;
 
+                case ImageEncoding.Jpg95:
+                    encoder = new JpegBitmapEncoder { QualityLevel = 95 };
+                    break;
+
                 case ImageEncoding.Jpg90:
                     encoder = new JpegBitmapEncoder { QualityLevel = 90 };
                     break;
