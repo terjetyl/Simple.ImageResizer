@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResizer", "ImageResizer\ImageResizer.csproj", "{AECA3C00-F440-4483-87D8-770F08F00C80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResizer.Web", "ImageResizer.Web\ImageResizer.Web.csproj", "{988381CF-21FB-437C-A20F-A02BB5B103BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,21 @@ Global
 		{AECA3C00-F440-4483-87D8-770F08F00C80}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{AECA3C00-F440-4483-87D8-770F08F00C80}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{AECA3C00-F440-4483-87D8-770F08F00C80}.Release|x86.ActiveCfg = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.OldRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.OldRelease|Any CPU.Build.0 = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.OldRelease|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.OldRelease|Mixed Platforms.Build.0 = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.OldRelease|x86.ActiveCfg = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>ImageResizer demo</h1>
+<p>
+    Upload photo
+</p>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" /> <input type="submit" value="Upload"/>
+}
+
+@if (ViewBag.Files != null)
+{
+    foreach (string filename in ViewBag.Files)
+    {
+        <h2>@filename</h2>
+        <img alt="" src='/Images/@filename' /><br />
+    }
+}
+
