@@ -1,10 +1,11 @@
-﻿@{
+﻿@using ImageResizer.Web.Models
+@{
     ViewBag.Title = "Home Page";
 }
 
 <h1>ImageResizer demo</h1>
 <p>
-    Upload photo
+    Upload photo for demo and @Html.ActionLink("Download library", "Download")
 </p>
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -13,10 +14,10 @@
 
 @if (ViewBag.Files != null)
 {
-    foreach (string filename in ViewBag.Files)
+    foreach (ImageModel image in ViewBag.Files)
     {
-        <h2>@filename</h2>
-        <img alt="" src='/Images/@filename' /><br />
+        <h2>@image.Url, Size: @string.Format("{0} kb", image.Size / 1000), ParseTime: @string.Format("{0} ms", image.ParseTime)</h2>
+        <img alt="" src='/Images/@image.Url' /><br />
     }
 }
 

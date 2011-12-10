@@ -59,8 +59,8 @@ namespace ImageResizer
             double heightRatio = newHeight / _orgHeight;
 
             if (widthRatio > heightRatio)
-                return new ImageSize(newWidth, newHeight, 0, ((int)(Math.Abs(_orgHeight - _orgWidth)) / 2));
-            return new ImageSize(newWidth, newHeight, ((int)(Math.Abs(_orgWidth - _orgHeight)) / 2), 0);
+                return new ImageSize(newWidth, newHeight, 0, ((int)(Math.Abs(_orgHeight - newHeight)) / 2));
+            return new ImageSize(newWidth, newHeight, ((int)(Math.Abs(_orgWidth - newWidth)) / 2), 0);
         }
     }
 

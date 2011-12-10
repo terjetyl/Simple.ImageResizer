@@ -19,7 +19,7 @@ namespace ImageResizer.UnitTests
             var imageSize = calc.ScaleToFill(400, 400);
             Assert.AreEqual(400, imageSize.Width);
             Assert.AreEqual(400, imageSize.Height);
-            Assert.AreEqual(100, imageSize.XOffset);
+            Assert.AreEqual(200, imageSize.XOffset);
             Assert.AreEqual(0, imageSize.YOffset);
         }
 
@@ -31,7 +31,7 @@ namespace ImageResizer.UnitTests
             Assert.AreEqual(400, imageSize.Width);
             Assert.AreEqual(400, imageSize.Height);
             Assert.AreEqual(0, imageSize.XOffset);
-            Assert.AreEqual(100, imageSize.YOffset);
+            Assert.AreEqual(200, imageSize.YOffset);
         }
 
         [Test]
@@ -43,6 +43,17 @@ namespace ImageResizer.UnitTests
             Assert.AreEqual(300, imageSize.Height);
             Assert.AreEqual(0, imageSize.XOffset);
             Assert.AreEqual(75, imageSize.YOffset);
+        }
+
+        [Test]
+        public void ScaleToFillTest4()
+        {
+            var calc = new ImageSizeCalculator(600, 312);
+            var imageSize = calc.ScaleToFill(600, 300);
+            Assert.AreEqual(600, imageSize.Width);
+            Assert.AreEqual(300, imageSize.Height);
+            Assert.AreEqual(0, imageSize.XOffset);
+            Assert.AreEqual(6, imageSize.YOffset);
         }
 
         [Test]
