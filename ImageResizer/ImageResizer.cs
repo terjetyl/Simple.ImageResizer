@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,11 +29,26 @@ namespace ImageResizer
             return Resize(width, 0, encoding);
         }
 
+        /// <summary>
+        /// Resizes with ScaleToFill
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
         public byte[] Resize(int width, int height, ImageEncoding encoding)
         {
             return Resize(width, height, true, encoding);
         }
 
+        /// <summary>
+        /// Resizes with ScaleToFit of crop is true
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="crop">if set to true ScaleToFit is used, if not ScaleToFill</param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
         public byte[] Resize(int width, int height, bool crop, ImageEncoding encoding)
         {
             if (width < 0)
@@ -41,7 +57,7 @@ namespace ImageResizer
                 throw new ArgumentException("height < 0");
 
             if (width > _orgBitMap.Width)
-                width = (int)_orgBitMap.Width;
+                width = (int)_orgBitMap.Width; 
             if (height > _orgBitMap.Height)
                 height = (int)_orgBitMap.Height;
 
@@ -66,30 +82,36 @@ namespace ImageResizer
 
         private BitmapSource ScaleToFill(int width, int height)
         {
-            double heightRatio = _orgBitMap.Height / height;
-            double widthRatio = _orgBitMap.Width / width;
+            Contract.Requires(width > 0);
+            Contract.Requires(height > 0);
 
-            int x = 0;
-            int y = 0;
+            double heightRatio = height / _orgBitMap.Height;
+            double widthRatio = width / _orgBitMap.Width;
 
             BitmapSource bitmapSource;
-
-            if (widthRatio > heightRatio)
+            ImageSize imageSize;
+            
+            if (heightRatio > widthRatio)
             {
                 bitmapSource = ResizeImageByHeight(_imageBytes, height);
-                x = (int)(bitmapSource.Width - width) / 2;
+                var calc = new ImageSizeCalculator(bitmapSource.PixelWidth, height);
+                imageSize = calc.ScaleToFill(width, height);
             }
             else
             {
                 bitmapSource = ResizeImageByWidth(_imageBytes, width);
-                y = (int)(bitmapSource.Height - height) / 2;
+                var calc = new ImageSizeCalculator(width, bitmapSource.PixelHeight);
+                imageSize = calc.ScaleToFill(width, height);
             }
 
-            return new CroppedBitmap(bitmapSource, new Int32Rect(x, y, width, height));
+            return new CroppedBitmap(bitmapSource, new Int32Rect(imageSize.XOffset, imageSize.YOffset, imageSize.Width, imageSize.Height));
         }
 
         private BitmapSource ScaleToFit(int width, int height)
         {
+            Contract.Requires(width > 0);
+            Contract.Requires(height > 0);
+
             double heightRatio = _orgBitMap.Height / height;
             double widthRatio = _orgBitMap.Width / width;
 
@@ -113,6 +135,9 @@ namespace ImageResizer
 
         private BitmapSource ResizeImageByWidth(byte[] imageData, int width)
         {
+            Contract.Requires(imageData != null);
+            Contract.Requires(width > 0);
+
             var newBitmap = new BitmapImage();
             newBitmap.BeginInit();
             newBitmap.DecodePixelWidth = width;
@@ -125,6 +150,9 @@ namespace ImageResizer
 
         private BitmapSource ResizeImageByHeight(byte[] imageData, int height)
         {
+            Contract.Requires(imageData != null);
+            Contract.Requires(height > 0);
+
             var newBitmap = new BitmapImage();
             newBitmap.BeginInit();
             newBitmap.DecodePixelHeight = height;
@@ -207,6 +235,8 @@ namespace ImageResizer
 
         private BitmapImage LoadBitmapImage(byte[] bytes)
         {
+            Contract.Requires(bytes != null);
+
             var newBitmap = new BitmapImage();
             newBitmap.BeginInit();
             newBitmap.StreamSource = new MemoryStream(bytes);
@@ -218,6 +248,9 @@ namespace ImageResizer
 
         private void SaveImageToFile(byte[] bytes, string path)
         {
+            Contract.Requires(bytes != null);
+            Contract.Requires(!string.IsNullOrWhiteSpace(path));
+
             var output = new FileStream(path, FileMode.Create, FileAccess.Write);
             var writer = new BinaryWriter(output);
             writer.Write(bytes);

@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageEncoding.cs" />
+    <Compile Include="ImageSizeCalculator.cs" />
     <Compile Include="ResizeOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ImageResizer.cs" />

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResizer", "ImageResize
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResizer.Web", "ImageResizer.Web\ImageResizer.Web.csproj", "{988381CF-21FB-437C-A20F-A02BB5B103BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResizer.UnitTests", "ImageResizer.UnitTests\ImageResizer.UnitTests.csproj", "{BD9B2369-167E-4CED-80B9-D67634FB3E69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,21 @@ Global
 		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{988381CF-21FB-437C-A20F-A02BB5B103BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.OldRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.OldRelease|Any CPU.Build.0 = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.OldRelease|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.OldRelease|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.OldRelease|x86.ActiveCfg = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD9B2369-167E-4CED-80B9-D67634FB3E69}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

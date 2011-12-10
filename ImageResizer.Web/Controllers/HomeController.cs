@@ -24,31 +24,48 @@ namespace ImageResizer.Web.Controllers
             string path = Server.MapPath("~/Images/"); 
             if(file != null)
             {
-                var imageResizer = new ImageResizer(file.ToByte());
+                var bytes = file.ToByte();
+                var imageResizer = new ImageResizer(bytes);
                 imageResizer.Resize(width, ImageEncoding.Jpg100);
                 string f = "Jpg100_w" + width + ".jpg";
                 files.Add(f);
                 imageResizer.SaveToFile(Path.Combine(path, f));
+                imageResizer.Dispose();
 
-                imageResizer.Resize(width, ImageEncoding.Jpg);
-                f = "Jpg75_w" + width + ".jpg";
-                files.Add(f);
-                imageResizer.SaveToFile(Path.Combine(path, f));
-
-                imageResizer.Resize(width, ImageEncoding.Png);
-                f = "Png_w" + width + ".png";
-                files.Add(f);
-                imageResizer.SaveToFile(Path.Combine(path, f));
-
-                imageResizer.Resize(width, ImageEncoding.Gif);
-                f = "Gif_w" + width + ".gif";
-                files.Add(f);
-                imageResizer.SaveToFile(Path.Combine(path, f));
-
-                imageResizer.Resize(300, 300, true, ImageEncoding.Jpg90);
+                var imageResizer2 = new ImageResizer(bytes);
+                imageResizer2.Resize(300, 300, true, ImageEncoding.Jpg90);
                 f = "Jpg90_w300_h300.jpg";
                 files.Add(f);
-                imageResizer.SaveToFile(Path.Combine(path, f));
+                imageResizer2.SaveToFile(Path.Combine(path, f));
+                imageResizer2.Dispose();
+
+                var imageResizer6 = new ImageResizer(bytes);
+                imageResizer6.Resize(600, 300, true, ImageEncoding.Jpg90);
+                f = "Jpg90_w600_h300.jpg";
+                files.Add(f);
+                imageResizer6.SaveToFile(Path.Combine(path, f));
+                imageResizer6.Dispose();
+
+                var imageResizer3 = new ImageResizer(bytes);
+                imageResizer3.Resize(width, ImageEncoding.Jpg);
+                f = "Jpg75_w" + width + ".jpg";
+                files.Add(f);
+                imageResizer3.SaveToFile(Path.Combine(path, f));
+                imageResizer3.Dispose();
+
+                var imageResizer4 = new ImageResizer(bytes);
+                imageResizer4.Resize(width, ImageEncoding.Png);
+                f = "Png_w" + width + ".png";
+                files.Add(f);
+                imageResizer4.SaveToFile(Path.Combine(path, f));
+                imageResizer4.Dispose();
+
+                var imageResizer5 = new ImageResizer(bytes);
+                imageResizer5.Resize(width, ImageEncoding.Gif);
+                f = "Gif_w" + width + ".gif";
+                files.Add(f);
+                imageResizer5.SaveToFile(Path.Combine(path, f));
+                imageResizer5.Dispose();
             }
 
             ViewBag.Files = files;
