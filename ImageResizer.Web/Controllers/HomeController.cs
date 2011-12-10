@@ -21,7 +21,7 @@ namespace ImageResizer.Web.Controllers
         {
             var files = new List<string>();
             const int width = 600;
-            string path = Server.MapPath("~/Images/");
+            string path = Server.MapPath("~/Images/"); 
             if(file != null)
             {
                 var imageResizer = new ImageResizer(file.ToByte());
