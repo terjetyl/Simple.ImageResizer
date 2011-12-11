@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ImageResizer.Web.Models;
@@ -45,9 +44,22 @@ namespace ImageResizer.Web.Controllers
                 start = DateTime.Now;
                 var imageResizer2 = new ImageResizer(bytes);
                 imageResizer2.Resize(300, 300, true, ImageEncoding.Jpg90);
-                f = "Jpg90_w300_h300.jpg";
+                f = "Jpg90_scaletofill_w300_h300.jpg";
                 imageResizer2.SaveToFile(Path.Combine(path, f));
                 imageResizer2.Dispose();
+                images.Add(new ImageModel
+                {
+                    ParseTime = (DateTime.Now - start).Milliseconds,
+                    Size = new FileInfo(Path.Combine(path, f)).Length,
+                    Url = f
+                });
+
+                start = DateTime.Now;
+                var imageResizer7 = new ImageResizer(bytes);
+                imageResizer7.Resize(300, 300, false, ImageEncoding.Jpg90);
+                f = "Jpg90_scaletofit_w300_h300.jpg";
+                imageResizer7.SaveToFile(Path.Combine(path, f));
+                imageResizer7.Dispose();
                 images.Add(new ImageModel
                 {
                     ParseTime = (DateTime.Now - start).Milliseconds,
