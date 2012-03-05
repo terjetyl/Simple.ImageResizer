@@ -5,7 +5,7 @@ PM> Install-Package Simple.ImageResizer
 
 Usage:
 <pre>
-ImageResizer.ImageResizer resizer = new ImageResizer.ImageResizer("c:/path/to/image.jpg");
+ImageResizer.ImageResizer resizer = new ImageResizer.ImageResizer(@"c:\path\to\image.jpg");
 
 // resize to 400 px, jpg quality 90
 var byteArray1 = resizer.Resize(400, ImageEncoding.Jpg90);
@@ -17,7 +17,7 @@ var byteArray2 = resizer.Resize(400, 200, true, ImageEncoding.Png);
 var byteArray3 = resizer.Resize(400, 200, false, ImageEncoding.Gif);
 
 // save last resized image to file
-resizer.SaveToFile("c:/path/to/image_resized.gif");
+resizer.SaveToFile(@"c:\path\to\image_resized.gif");
 </pre>
 
 Or
