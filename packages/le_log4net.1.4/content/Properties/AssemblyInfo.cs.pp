@@ -1,1 +1,0 @@
-[assembly: log4net.Config.XmlConfigurator(ConfigFile="web.config",Watch=true)]
