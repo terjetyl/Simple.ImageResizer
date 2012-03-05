@@ -1,5 +1,8 @@
 Simple C# ImageResizer library using wpf classes
 
+Available on NuGet:
+PM> Install-Package Simple.ImageResizer
+
 Usage:
 
 ImageResizer.ImageResizer resizer = new ImageResizer.ImageResizer("c:/path/to/image.jpg");
@@ -15,3 +18,14 @@ var byteArray3 = resizer.Resize(400, 200, false, ImageEncoding.Gif);
 
 // save last resized image to file
 resizer.SaveToFile("c:/path/to/image_resized.gif");
+
+
+Or
+
+public ActionResult Upload(HttpPostedFileBase file)
+{
+      var imageResizer = new ImageResizer.ImageResizer(file.InputStream.ToByteArray());
+      imageResizer.Resize(800, ImageEncoding.Jpg100);
+      imageResizer.SaveToFile(Path.Combine(Server.MapPath("~/upload"), file.FileName));
+      return View();
+}
