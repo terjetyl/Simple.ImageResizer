@@ -171,7 +171,7 @@ namespace Simple.ImageResizer
             switch (encoding)
             {
                 case ImageEncoding.Jpg100:
-                    encoder = new JpegBitmapEncoder{QualityLevel = 100};
+                    encoder = new JpegBitmapEncoder { QualityLevel = 100 };
                     break;
 
                 case ImageEncoding.Jpg95:
@@ -191,7 +191,10 @@ namespace Simple.ImageResizer
                     break;
 
                 case ImageEncoding.Png:
-                    encoder = new PngBitmapEncoder();
+                    encoder = new PngBitmapEncoder
+                        {
+                            Interlace = PngInterlaceOption.On
+                        };
                     break;
 
                 case ImageEncoding.Tiff:
