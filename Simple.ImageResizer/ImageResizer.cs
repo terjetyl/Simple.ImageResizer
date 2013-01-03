@@ -191,10 +191,7 @@ namespace Simple.ImageResizer
                     break;
 
                 case ImageEncoding.Png:
-                    encoder = new PngBitmapEncoder
-                        {
-                            Interlace = PngInterlaceOption.On
-                        };
+                    encoder = new PngBitmapEncoder();
                     break;
 
                 case ImageEncoding.Tiff:
