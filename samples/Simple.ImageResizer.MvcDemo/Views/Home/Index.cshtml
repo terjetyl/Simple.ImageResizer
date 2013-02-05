@@ -1,0 +1,30 @@
+﻿@model Simple.ImageResizer.MvcDemo.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Simple.ImageResizer demo";
+}
+
+<div class="container">
+
+    <h1>Simple.ImageResizer demo</h1>
+    <p>
+        Upload photo for demo. The image is resized and output as a jpg 90% quality which is a good balance between size and quality. You can also @Html.ActionLink("Download the library", "Download")
+    </p>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" /> <input type="submit" value="Upload"/>
+    }
+    
+    <h2>700 * 300</h2>
+    <div class="row-fluid">
+        <img src="~/Images/@Model.ImageName?w=700&h=300" alt="image" />
+    </div>
+    <h2>500 * 200</h2>
+    <div class="row-fluid">
+        <img src="~/Images/@Model.ImageName?w=500&h=200" alt="image" />
+    </div>
+    <h2>100 * 100</h2>
+    <div class="row-fluid">
+        <img src="~/Images/@Model.ImageName?w=100&h=100" alt="image" />
+    </div>
+</div>
