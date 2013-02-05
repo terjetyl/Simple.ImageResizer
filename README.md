@@ -1,5 +1,7 @@
 Simple C# ImageResizer library using wpf classes
 
+Try it out here: [http://imageresizer.apphb.com/](http://imageresizer.apphb.com/)
+
 Available on NuGet:
 PM> Install-Package Simple.ImageResizer
 
