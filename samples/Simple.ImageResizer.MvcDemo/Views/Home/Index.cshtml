@@ -47,7 +47,7 @@
                 }
             }
             </pre>
-            Notice how you can pass in width and height into the ImageResult constructor. The output cache and some custom code in the ImageResult will agressively cache the image reponse on the client. 
+            Notice how you can pass in width and height into the ImageResult constructor. The output cache and some custom code in the ImageResult will agressively cache the image response on the client. 
             The ImageResult class also takes care of caching the resized image to disk in subfolders where the original image is located. Therefore make sure that the asp.net user have write access to the image folder.
             Also you will need to add a custome mvc route to map image requests to your controller action.
             <pre>
