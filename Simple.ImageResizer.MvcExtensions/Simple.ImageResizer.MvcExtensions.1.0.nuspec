@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Simple.ImageResizer.MvcExtensions</id>
+        <version>1.0.0</version>
+        <title>Simple.ImageResizer.MvcExtensions</title>
+        <authors>Terje Tyldum</authors>
+        <owners>Terje Tyldum</owners>
+        <projectUrl>https://github.com/terjetyl/Simple.ImageResizer</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Adds a ImageResult class that makes it very simple to add dynamic resizing of images in your mvc application. Check the projecturl for a how to</description>
+        <releaseNotes>First release.</releaseNotes>
+        <copyright>Copyright 2013</copyright>
+        <tags>ImageResizer image resizing mvc</tags>
+        <dependencies>
+            <dependency id="Simple.ImageResizer" version="2.0.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="lib\net45\Simple.ImageResizer.MvcExtensions.dll" target="lib\net45\Simple.ImageResizer.MvcExtensions.dll" />
+    </files>
+</package>

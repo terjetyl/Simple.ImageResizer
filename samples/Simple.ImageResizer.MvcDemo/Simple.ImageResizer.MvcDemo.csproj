@@ -50,6 +50,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Simple.ImageResizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Simple.ImageResizer.2.0.0\lib\Simple.ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.ImageResizer.MvcExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Simple.ImageResizer.MvcExtensions.1.0.0\lib\net45\Simple.ImageResizer.MvcExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -248,12 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Simple.ImageResizer.MvcExtensions\Simple.ImageResizer.MvcExtensions.csproj">
-      <Project>{8af52b4a-b8d9-4c67-b43b-c654c49c3484}</Project>
-      <Name>Simple.ImageResizer.MvcExtensions</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -31,4 +31,26 @@ public ActionResult Upload(HttpPostedFileBase file)
 }
 </pre>
 
-Now also with a MvcExtensions package making it super easy to add dynamic image resizing to your asp.net mvc site.
+Now also with a MvcExtensions package making it super easy to add dynamic image resizing into your asp.net mvc site.
+
+Step 1:
+PM> Install-Package Simple.ImageResizer.MvcExtensions
+
+Step 2:
+Add a ImagesController. Notice the ImageResult class which inherits FileResult and lets you add a custom width and height in the constructor. Setting both height and width to 0 will skip resizing of the image. Note: Your app will need write permission to the image folder specified as it caches resized images on disk in a subfolder.
+<pre>
+public class ImagesController : Controller{        [OutputCache(VaryByParam = "*", Duration = 60 * 60 * 24 * 365)]        public ImageResult Index(string filename, int w = 0, int h = 0)        {            string filepath = Path.Combine(Server.MapPath("~/images2"), filename);            return new ImageResult(filepath, w, h);        }}
+</pre>
+
+Step 3:
+Add a custom route for images allowing requests to images to be handled by our controller action.
+<pre>
+routes.MapRoute(        "Image", "images/{filename}",        new { controller = "Images", action = "Index", filename = "" });
+</pre>
+
+Step 4:
+Add the following to web.config in the system.webserver section to allow calls to static files to be handled by the mvc pipeline.
+<pre>
+&lt;modules runAllManagedModulesForAllRequests="true" /&gt;
+</pre>
+
