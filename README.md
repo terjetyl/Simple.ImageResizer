@@ -30,3 +30,5 @@ public ActionResult Upload(HttpPostedFileBase file)
       return View();
 }
 </pre>
+
+Now also with a MvcExtensions package making it super easy to add dynamic image resizing to your asp.net mvc site.
