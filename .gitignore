@@ -18,7 +18,6 @@ _ReSharper.*/
 ###################
 *.com
 *.class
-*.exe
 *.o
 *.so
 
