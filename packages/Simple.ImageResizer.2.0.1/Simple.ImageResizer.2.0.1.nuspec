@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Simple.ImageResizer</id>
+    <version>2.0.1</version>
+    <title>Simple.ImageResizer</title>
+    <authors>Terje Tyldum</authors>
+    <owners>Terje Tyldum</owners>
+    <projectUrl>https://github.com/terjetyl/Simple.ImageResizer</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple C# ImageResizer library using wpf classes</description>
+    <releaseNotes>Added project link</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>ImageResizer image resizing mvc</tags>
+  </metadata>
+</package>

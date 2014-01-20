@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>le_log4net</id>
+    <version>2.4.0</version>
+    <title>Logentries Plugin for Log4net[1.2.11] - DEPRECATED</title>
+    <authors>Mark</authors>
+    <owners>Mark</owners>
+    <projectUrl>https://github.com/logentries/le_log4net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>le_log4net for Log4net[1.2.11] is deprecated. Please use logentries.log4net instead</description>
+    <copyright>Copyright 2011</copyright>
+    <dependencies>
+      <dependency id="log4net" version="2.0.0" />
+    </dependencies>
+  </metadata>
+</package>
