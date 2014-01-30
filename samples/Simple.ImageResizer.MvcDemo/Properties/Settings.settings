@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Simple.ImageResizer.MvcDemo.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AWSPublicFilesBucket" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">imageresizerdemo</Value>
+    </Setting>
+    <Setting Name="AWSAccessKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AKIAJ3S6PKHWZIKSUPXA</Value>
+    </Setting>
+    <Setting Name="AWSSecretKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WqjdQvp6QntCiGQdCkaCeCky1gq4cAKQNOg/I+Rv</Value>
+    </Setting>
+    <Setting Name="S3BaseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://s3-eu-west-1.amazonaws.com</Value>
+    </Setting>
+    <Setting Name="CloudfrontBaseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://d1qesipsmp2u0q.cloudfront.net</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,75 @@
+﻿@model Simple.ImageResizer.MvcDemo.ViewModels.AmazonViewModel
+
+@{
+    ViewBag.Title = "Simple.ImageResizer demo";
+}
+
+<div class="container">
+
+    <h1>Simple.ImageResizer demo</h1>
+    <p>
+        Upload photo for demo. The image is resized and output as a jpg 90% quality which is a good balance between size and quality. You can also @Html.ActionLink("Download the library", "Download")
+    </p>
+    @using (Html.BeginForm("Index", "AmazonS3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" /> <input type="submit" value="Upload" />
+    }
+    
+    <h3>S3 images</h3>
+    @foreach (var s in Model.ResizeSettings.Settings)
+    {
+        <h2>@s.Width * @s.Height</h2>
+        <div class="row-fluid">
+            <img src="@Model.GetS3Url(s)" alt="image" />
+        </div>
+    }
+    
+    <h3>Cloudfront images</h3>
+    @foreach (var s in Model.ResizeSettings.Settings)
+    {
+        <h2>@s.Width * @s.Height</h2>
+        <div class="row-fluid">
+            <img src="@Model.GetCloudfrontUrl(s)" alt="image" />
+        </div>
+    }
+
+    <div class="row-fluid">
+        <h2>How to install</h2>
+        <p>
+            To add this to your site run
+            <pre>
+            install package simple.imageresizer.mvcextensions
+            </pre>
+            This will add a ImageResult class allowing you to add this controller action to your site
+            <pre>
+            public class ImagesController : Controller
+            {
+                [OutputCache(VaryByParam = "*", Duration = 60 * 60 * 24 * 365)]
+                public ImageResult Index(string filename, int w = 0, int h = 0)
+                {
+                    string filepath = Path.Combine(Server.MapPath("~/images2"), filename);
+                    return new ImageResult(filepath, w, h);
+                }
+            }
+            </pre>
+            Notice how you can pass in width and height into the ImageResult constructor. The output cache and some custom code in the ImageResult will agressively cache the image response on the client.
+            The ImageResult class also takes care of caching the resized image to disk in subfolders where the original image is located. Therefore make sure that the asp.net user have write access to the image folder.
+            Also you will need to add a custome mvc route to map image requests to your controller action.
+            <pre>
+            routes.MapRoute(
+                "Image", "images/{filename}",
+                new { controller = "Images", action = "Index", filename = "" }
+            );
+            </pre>
+            Last you may also need to add this line to your web.config to make sure the mvc pipeline is handling the image request
+            <pre>
+            &lt;system.webServer&gt;
+                &lt;runAllManagedModulesForAllRequests="true" /&gt;
+            &lt;/system.webServer&gt;
+            </pre>
+
+            Code is hosted at github: <a target="_blank" href="https://github.com/terjetyl/Simple.ImageResizer">https://github.com/terjetyl/Simple.ImageResizer</a><br />
+            Comments and pull requests are welcome.
+        </p>
+    </div>
+</div>
