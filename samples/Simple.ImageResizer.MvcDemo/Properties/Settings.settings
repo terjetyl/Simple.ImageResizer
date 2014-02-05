@@ -6,16 +6,16 @@
       <Value Profile="(Default)">imageresizerdemo</Value>
     </Setting>
     <Setting Name="AWSAccessKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">AKIAJ3S6PKHWZIKSUPXA</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AWSSecretKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">WqjdQvp6QntCiGQdCkaCeCky1gq4cAKQNOg/I+Rv</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="S3BaseUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://s3-eu-west-1.amazonaws.com</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="CloudfrontBaseUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://d1qesipsmp2u0q.cloudfront.net</Value>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

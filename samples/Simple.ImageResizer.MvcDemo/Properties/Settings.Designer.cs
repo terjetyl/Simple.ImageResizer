@@ -34,7 +34,7 @@ namespace Simple.ImageResizer.MvcDemo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AKIAJ3S6PKHWZIKSUPXA")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string AWSAccessKey {
             get {
                 return ((string)(this["AWSAccessKey"]));
@@ -43,7 +43,7 @@ namespace Simple.ImageResizer.MvcDemo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WqjdQvp6QntCiGQdCkaCeCky1gq4cAKQNOg/I+Rv")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string AWSSecretKey {
             get {
                 return ((string)(this["AWSSecretKey"]));
@@ -52,7 +52,7 @@ namespace Simple.ImageResizer.MvcDemo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://s3-eu-west-1.amazonaws.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string S3BaseUrl {
             get {
                 return ((string)(this["S3BaseUrl"]));
@@ -61,7 +61,7 @@ namespace Simple.ImageResizer.MvcDemo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://d1qesipsmp2u0q.cloudfront.net")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string CloudfrontBaseUrl {
             get {
                 return ((string)(this["CloudfrontBaseUrl"]));
