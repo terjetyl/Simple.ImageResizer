@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace Simple.ImageResizer.UnitTests
 {
@@ -83,6 +84,18 @@ namespace Simple.ImageResizer.UnitTests
         {
             var calc = new ImageSizeCalculator(600, 800);
             var imageSize = calc.ScaleToFit(400, 400);
+            Assert.AreEqual(300, imageSize.Width);
+            Assert.AreEqual(400, imageSize.Height);
+            Assert.AreEqual(0, imageSize.XOffset);
+            Assert.AreEqual(0, imageSize.YOffset);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ScaleToFitTest3()
+        {
+            var calc = new ImageSizeCalculator(116, 93);
+            var imageSize = calc.ScaleToFit(340, 75);
             Assert.AreEqual(300, imageSize.Width);
             Assert.AreEqual(400, imageSize.Height);
             Assert.AreEqual(0, imageSize.XOffset);

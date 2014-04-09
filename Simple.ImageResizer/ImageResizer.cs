@@ -57,9 +57,9 @@ namespace Simple.ImageResizer
                 throw new ArgumentException("height < 0");
 
             if (width > _orgBitMap.PixelWidth)
-                width = (int)_orgBitMap.PixelWidth; 
+                width = _orgBitMap.PixelWidth; 
             if (height > _orgBitMap.PixelHeight)
-                height = (int)_orgBitMap.PixelHeight;
+                height = _orgBitMap.PixelHeight;
 
             BitmapSource bitmapSource = null;
 
@@ -113,8 +113,8 @@ namespace Simple.ImageResizer
             Contract.Requires(width > 0);
             Contract.Requires(height > 0);
 
-            double heightRatio = _orgBitMap.PixelHeight / height;
-            double widthRatio = _orgBitMap.PixelWidth / width;
+            double heightRatio = (double)_orgBitMap.PixelHeight / height;
+            double widthRatio = (double)_orgBitMap.PixelWidth / width;
 
             if (heightRatio > widthRatio)
             {
