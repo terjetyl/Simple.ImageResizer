@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.ImageResizer", "Simple.ImageResizer\Simple.ImageResizer.csproj", "{AECA3C00-F440-4483-87D8-770F08F00C80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.ImageResizer.UnitTests", "Simple.ImageResizer.UnitTests\Simple.ImageResizer.UnitTests.csproj", "{BD9B2369-167E-4CED-80B9-D67634FB3E69}"
@@ -15,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4ECFAB
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Simple.ImageResizer.ConsoleApp", "Simple.ImageResizer.ConsoleApp\Simple.ImageResizer.ConsoleApp.fsproj", "{BD3BC805-5CB8-4450-ABE0-33769BCE6692}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +42,10 @@ Global
 		{8AF52B4A-B8D9-4C67-B43B-C654C49C3484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AF52B4A-B8D9-4C67-B43B-C654C49C3484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AF52B4A-B8D9-4C67-B43B-C654C49C3484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3BC805-5CB8-4450-ABE0-33769BCE6692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3BC805-5CB8-4450-ABE0-33769BCE6692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3BC805-5CB8-4450-ABE0-33769BCE6692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3BC805-5CB8-4450-ABE0-33769BCE6692}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
