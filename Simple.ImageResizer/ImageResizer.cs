@@ -46,7 +46,7 @@ namespace Simple.ImageResizer
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        /// <param name="crop">if set to true ScaleToFit is used, if not ScaleToFill</param>
+        /// <param name="crop">if set to true ScaleToFill is used, if not ScaleToFit</param>
         /// <param name="encoding"></param>
         /// <returns></returns>
         public byte[] Resize(int width, int height, bool crop, ImageEncoding encoding)
@@ -55,11 +55,6 @@ namespace Simple.ImageResizer
                 throw new ArgumentException("width < 0");
             if (height < 0)
                 throw new ArgumentException("height < 0");
-
-            if (width > _orgBitMap.PixelWidth)
-                width = _orgBitMap.PixelWidth; 
-            if (height > _orgBitMap.PixelHeight)
-                height = _orgBitMap.PixelHeight;
 
             BitmapSource bitmapSource = null;
 
@@ -113,8 +108,8 @@ namespace Simple.ImageResizer
             Contract.Requires(width > 0);
             Contract.Requires(height > 0);
 
-            double heightRatio = (double)_orgBitMap.PixelHeight / height;
-            double widthRatio = (double)_orgBitMap.PixelWidth / width;
+            double heightRatio = ((double)_orgBitMap.PixelHeight) / height;
+            double widthRatio = ((double)_orgBitMap.PixelWidth) / width;
 
             if (heightRatio > widthRatio)
             {

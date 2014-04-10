@@ -34,9 +34,6 @@ namespace Simple.ImageResizer
             if (newHeight <= 0)
                 throw new ArgumentException(string.Format("Invalid new height: {0}", newHeight));
 
-            if (newWidth > _orgWidth || newHeight > _orgHeight)
-                throw new ArgumentException("Cannot scale up, new size is larger than org size");
-
             double widthRatio = newWidth / _orgWidth;
             double heightRatio = newHeight / _orgHeight;
 
@@ -51,9 +48,6 @@ namespace Simple.ImageResizer
                 throw new ArgumentException(string.Format("Invalid new width: {0}", newWidth));
             if (newHeight <= 0)
                 throw new ArgumentException(string.Format("Invalid new height: {0}", newHeight));
-
-            if (newWidth > _orgWidth || newHeight > _orgHeight)
-                throw new ArgumentException("Cannot scale up, new size is larger than org size");
 
             double widthRatio = newWidth / _orgWidth;
             double heightRatio = newHeight / _orgHeight;
