@@ -62,7 +62,7 @@
     </Reference>
     <Reference Include="Simple.ImageResizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Simple.ImageResizer.2.0.1\lib\net40\Simple.ImageResizer.dll</HintPath>
+      <HintPath>..\..\packages\Simple.ImageResizer.2.1.0\lib\net40\Simple.ImageResizer.dll</HintPath>
     </Reference>
     <Reference Include="Simple.ImageResizer.MvcExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
